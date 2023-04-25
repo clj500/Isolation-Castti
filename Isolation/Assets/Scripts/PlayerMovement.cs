@@ -46,9 +46,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if ((transform.position.x <= bottomLeftLimit.x && moveDirection.x == -1) || (transform.position.x <= topRightLimit.x && moveDirection.x == 1))
+        if ((transform.position.x <= bottomLeftLimit.x && moveDirection.x == -1) || (transform.position.x >= topRightLimit.x && moveDirection.x == 1))
         {
             moveDirection.x = 0;
+        }
+
+        if ((transform.position.y <= bottomLeftLimit.y && moveDirection.y == -1) || (transform.position.y >= topRightLimit.y && moveDirection.y == 1))
+        {
+            moveDirection.y = 0;
         }
 
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
