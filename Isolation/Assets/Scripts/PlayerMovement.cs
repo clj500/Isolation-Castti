@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float moveY;
     public float moveSpeed;
 
+    Animator animator;
+
     public Rigidbody2D rb;
 
     private Vector2 moveDirection;
@@ -24,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     {
         topRightLimit = topRight.transform.position;
         bottomLeftLimit = bottomLeft.transform.position;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()

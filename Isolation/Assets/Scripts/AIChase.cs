@@ -7,6 +7,8 @@ public class AIChase : MonoBehaviour
     public GameObject player;
     public float speed;
 
+    Animator animator;
+
     private float distance;
 
     //Variables for detecting boundaries
@@ -21,6 +23,8 @@ public class AIChase : MonoBehaviour
     {
         topRightLimit = topRight.transform.position;
         bottomLeftLimit = bottomLeft.transform.position;
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,11 +34,19 @@ public class AIChase : MonoBehaviour
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bool move = false;
 
         if(distance < 5)
         {
+            move = true;
+            animator.SetBool("Moving", move);
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        }
+        else
+        {
+            move = false;
+            animator.SetBool("Moving", move);
         }
     }
 }
