@@ -15,3 +15,5 @@ public class ZombieDamage : MonoBehaviour
         }
     }
 }
+
+//Reference: https://www.youtube.com/watch?v=KF3EVjOhN4c

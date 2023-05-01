@@ -31,4 +31,4 @@ public class AIChase : MonoBehaviour
     }
 }
 
-//Reference code: https://www.youtube.com/watch?v=2SXa10ILJms
+//Script Reference: https://www.youtube.com/watch?v=2SXa10ILJms
