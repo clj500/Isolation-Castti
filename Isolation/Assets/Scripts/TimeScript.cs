@@ -39,7 +39,6 @@ public class TimeScript : MonoBehaviour
         {
             Flash();
             UpdateDay();
-            ResetTimer();
         }
 
         else if (!countDown && timer > timerDuration - 5f)
