@@ -9,10 +9,18 @@ public class AIChase : MonoBehaviour
 
     private float distance;
 
+    //Variables for detecting boundaries
+    public GameObject topRight;
+    public GameObject bottomLeft;
+
+    private Vector3 topRightLimit;
+    private Vector3 bottomLeftLimit;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        topRightLimit = topRight.transform.position;
+        bottomLeftLimit = bottomLeft.transform.position;
     }
 
     // Update is called once per frame
