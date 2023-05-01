@@ -125,11 +125,20 @@ public class TimeScript : MonoBehaviour
         if(night == false)
         {
             nighttime.SetActive(true);
+
+            night = true;
         }
 
         if (night == true)
         {
             nighttime.SetActive(false);
+
+            night = false;
+        }
+
+        if(night == true)
+        {
+            //Make zombies spawn
         }
     }
 
